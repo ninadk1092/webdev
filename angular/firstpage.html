@@ -1,0 +1,52 @@
+<html ng-app="demoApp">
+	<head>
+		<title>Angular JS tutorial</title>
+	</head>
+	<body>
+		<div>
+			<!--Place Holder for the views-->
+			<div ng-view></div>
+
+		</div>
+		<script src="scripts/angular.min.js" type="text/javascript"></script>
+		<script src="scripts/angular-route.js" type="text/javascript"></script>
+		
+		<script>
+			var demoApp = angular.module('demoApp', ['ngRoute']);
+
+			demoApp.config('$routeProvider', function($routeProvider){
+				$routeProvider
+				.when('/',
+				{
+					controller : 'SimpleController',
+					templateUrl : 'Partials/View1.html'
+				})
+				.when('/view2',
+				{
+					controller: 'SimpleController',
+					templateUrl: 'Partials/View2.html'
+				})
+				.otherwise({redirectTo: '/'});
+			});
+
+			demoApp.controller('SimpleController', function($scope){
+				$scope.customers = [
+				{name: 'John Smith', city: 'New York'}, 
+				{name: 'John Doe', city: 'New Jersey'}, 
+				{name:'Jane Doe', city: 'Washington'}
+				];
+
+				$scope.addCustomer = function(){
+					$scope.customers.push(
+						{
+							name: $scope.newCustomer.name, 
+							city: $scope.newCustomer.city
+						});
+				}
+			});
+		
+
+			demoApp.controller('SimpleController', SimpleController);
+		</script>
+	</body>
+</html>

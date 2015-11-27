@@ -1,0 +1,79 @@
+Grep  High level API's documentation
+
+Feature in development - Juke Box
+
+API details to be implemented in the MVP
+
+Customer API's
+
+
+1. Place/DJ's signup
+	endpoint - /place 					- POST
+	type - secured						- Authentication required
+
+
+2. Save a new playlist
+	endpoint - /playlist				- POST
+	type - secured						- Authentication required
+
+
+3. Get all the saved playlist based on filters
+	endpoint - /playlist				- GET
+	type - secured						- Authentication required
+
+
+4. Get a particluar playlist
+	endpoint - /playlist/<playlistId>		- POST
+	type - secured							- Authentication required
+	Accepts json raw params
+
+5. Update a particular playlist
+	endpoint - /playlist/<playlistId>		- PUT
+	type - secured							- Authentication required
+	Accepts json raw params
+
+
+
+
+
+End User API's
+
+1. User signup
+	endpoint - /user/register 			- POST
+	type - secured						- Authentication required
+
+2. User login
+	endpoint - /user/login 				- POST
+	type - secured						- Authentication required
+
+
+2. Get a place 
+	endpoint - /user/place				- GET
+	type - secured						- Authentication required
+
+
+3. Get the current playlist based on filters
+	endpoint - /user/place/playlist		- GET
+	type - secured						- Authentication required
+	param - url params as filters.
+
+
+4. Upvote a song in playlist
+	endpoint - /user/place/playlist/<songId>		- POST
+	type - secured							- Authentication required
+	Accepts json raw params to modify the state of song
+
+
+Common API's
+
+Notification system to be able to notify the user for anything happening with his actions 
+eg: registration/when his song plays or any event we want him to know.
+
+
+
+For authentication we need to use JWT - Json web token to keep the user context inside the tokens.
+
+
+
+
+
